@@ -23,7 +23,14 @@
         // dev JS
         'use strict'
         const userAgent = navigator.userAgent.toLowerCase();
-        alert(userAgent);
+        let isKakao = checkKakao()?"Y":"N";
+
+        function checkKakao() {
+            if(userAgent.indexOf("kakao") != -1) return true;
+            else return false;
+        }
+
+        alert(isKakao);
     </script>
 </head>
 <body>
