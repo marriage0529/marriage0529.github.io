@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    overflow-y: hidden;
+}
+.content div {
+    position: relative;
+}
+.content div p {
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    text-align: center;
+    width: 100%;
+    font-size: 80px;
+    font-weight: bold;
+    color: #fff;
+}
+.content .cnt01 {
+    background-color: #cc6666;
+}
+.content .cnt02 {
+    background-color: #9966cc;
+}
+.content .cnt03 {
+    background-color: #6699cc;
+}
+.content .cnt04 {
+    background-color: #66cc99;
+}
