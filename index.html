@@ -18,20 +18,8 @@
     <!-- asset -->
     <link rel="stylesheet" type="text/css" href="./assets/css/base.css"/>
     <link rel="stylesheet" type="text/css" href="./assets/css/app.css"/>
-    <script src="./assets/js/app.js"></script>
-    <script>
-        // dev JS
-        'use strict'
-        const userAgent = navigator.userAgent.toLowerCase();
-        let isKakao = checkKakao()?"Y":"N";
-
-        function checkKakao() {
-            if(userAgent.indexOf("kakao") != -1) return true;
-            else return false;
-        }
-
-        alert(isKakao);
-    </script>
+    <script src="./assets/js/motion.js"></script>
+    <script src="./assets/js/app.js?cache=20210209"></script>
 </head>
 <body>
     <div class="wrapper">
