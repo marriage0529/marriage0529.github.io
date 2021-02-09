@@ -23,12 +23,13 @@ body {
     height: 100%;
     padding: 30px;
     box-sizing: border-box;
-    font-size: 30px;
     font-weight: bold;
 }
 .box:nth-child(1) {
     background-color: #fafafa;
     color: #5e5d5d;
+    font-size: 0.75em;
+    text-align: center;
 }
 .box:nth-child(2) {
     background-color: #fafafa;
