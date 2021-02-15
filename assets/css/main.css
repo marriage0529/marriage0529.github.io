@@ -8,6 +8,12 @@
     font-weight: normal;
     font-style: normal;
 }
+
+::selection {
+    background-color: #f57550;
+    /* color: #f57550; */
+}
+
 /*
 	Story by HTML5 UP
 	html5up.net | @ajlkn
@@ -2526,7 +2532,7 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    /* font-family: "Font Awesome 5 Free"; */
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
 
@@ -2668,7 +2674,7 @@ input[type="radio"]:focus + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    /* font-family: "Font Awesome 5 Free"; */
+    font-family: "Font Awesome 5 Free";
     font-weight: 400;
 }
 
@@ -2685,7 +2691,7 @@ input[type="radio"]:focus + label:before {
 }
 
 .icon.brands:before {
-    /* font-family: "Font Awesome 5 Brands"; */
+    font-family: "Font Awesome 5 Brands";
 }
 
 .icon.style2:before {
@@ -6837,7 +6843,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    /* font-family: "Font Awesome 5 Free"; */
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
 
