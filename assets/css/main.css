@@ -1,6 +1,13 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i");
 
+@font-face {
+    font-family: "MaruBuri-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
 /*
 	Story by HTML5 UP
 	html5up.net | @ajlkn
@@ -243,7 +250,7 @@ body,
 input,
 select,
 textarea {
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    /* font-family: "Source Sans Pro", Helvetica, sans-serif; */
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.65;
@@ -347,7 +354,7 @@ blockquote {
 
 code {
     border-radius: 4px;
-    font-family: "Courier New", monospace;
+    /* font-family: "Courier New", monospace; */
     font-size: 0.9em;
     margin: 0 0.25rem;
     padding: 0.25rem 0.325rem;
@@ -355,7 +362,7 @@ code {
 
 pre {
     -webkit-overflow-scrolling: touch;
-    font-family: "Courier New", monospace;
+    /* font-family: "Courier New", monospace; */
     font-size: 0.9em;
     margin: 0 0 2rem 0;
 }
@@ -2519,7 +2526,7 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: "Font Awesome 5 Free";
+    /* font-family: "Font Awesome 5 Free"; */
     font-weight: 900;
 }
 
@@ -2661,7 +2668,7 @@ input[type="radio"]:focus + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: "Font Awesome 5 Free";
+    /* font-family: "Font Awesome 5 Free"; */
     font-weight: 400;
 }
 
@@ -2678,7 +2685,7 @@ input[type="radio"]:focus + label:before {
 }
 
 .icon.brands:before {
-    font-family: "Font Awesome 5 Brands";
+    /* font-family: "Font Awesome 5 Brands"; */
 }
 
 .icon.style2:before {
@@ -6830,7 +6837,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: "Font Awesome 5 Free";
+    /* font-family: "Font Awesome 5 Free"; */
     font-weight: 900;
 }
 
