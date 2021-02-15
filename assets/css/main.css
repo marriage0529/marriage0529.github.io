@@ -11,7 +11,9 @@
 
 ::selection {
     background-color: #f57550;
-    /* color: #f57550; */
+}
+* {
+    -webkit-tap-highlight-color: #f57550;
 }
 
 /*
