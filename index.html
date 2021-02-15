@@ -18,6 +18,8 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-44X7RG1EEV"></script>
+    <!-- Kakao Map API By chan -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc21ee3268b80cd20003ad689adc4225"></script>
     <style>
         body {font-family: MaruBuri-Regular;}
     </style>
@@ -128,6 +130,20 @@
             </div>
         </section>
 
+        <section class="wrapper style1 align-center">
+            <div class="inner">
+                <h2>오시는 길</h2>
+            </div>
+            <div class="content">
+                <p>
+                    <div id="map" style="width:500px;height:400px;"></div>
+                </p>
+                <ul class="actions stacked">
+                    <li><a href="#" class="button">Learn More</a></li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer class="wrapper style1 align-center">
             <div class="inner">
@@ -150,12 +166,11 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+        /*
+         * D-Day Draw
+        */
         const _DATE = new Date();
         const _DDAY = new Date(2021, 4, 29);
-        
-        $(function(){
-            fnSetDate();
-        });
 
         function fnSetDate(){
             let _PRINT  = "";
@@ -168,6 +183,24 @@
 
             $("#printDay").text(_PRINT);
         }
+
+        /*
+         * Kakao Map Draw
+        */
+        const _LAT = 37.489617;
+        const _LNG = 126.7228175;
+        
+        let container = document.getElementById('map');
+		let options = {
+			center: new kakao.maps.LatLng(_LAT, _LNG), level: 3
+		};
+
+		let map = new kakao.maps.Map(container, options);
+
+        // document.ready...
+        $(function(){
+            fnSetDate();
+        });
     </script>
 </body>
 </html>
