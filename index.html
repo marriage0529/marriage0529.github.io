@@ -135,9 +135,8 @@
                 <h2>오시는 길</h2>
             </div>
             <div class="content">
-                <p>
-                    <div id="map" style="width:500px;height:400px;"></div>
-                </p>
+                <!-- 지도 영역 -->
+                <div id="map" style="width:980px;height:563px;"></div>
                 <ul class="actions stacked">
                     <li><a href="#" class="button">Learn More</a></li>
                 </ul>
@@ -189,7 +188,7 @@
         */
         const _LAT = 37.489617;
         const _LNG = 126.7228175;
-        
+
         let container = document.getElementById('map');
 		let options = {
 			center: new kakao.maps.LatLng(_LAT, _LNG), level: 3
