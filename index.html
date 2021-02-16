@@ -244,35 +244,32 @@
         const _LNG = 126.7228175;
         const _SIZE = window.screen.width;
         const _CONTAINER = document.getElementById("map");
+        
         let _TRAFFIC = false;
         let map = null;
         let marker = null;
         let overlay = null;
 
         let placeOverlay = null;
+        let contentNode = null;
+        let markers = null;
+        let currCategory = null;
         let ps = null;
 
         function fnDrawMap() {
-            if(location.href.indexOf("marriage0529.github.io") < 0){
-                return;
-            }
+            if(location.href.indexOf("marriage0529.github.io") < 0) return;
 
-            if(_CONTAINER === undefined){
-                return;
-            }
+            if(_CONTAINER === undefined) return;
 
-            if(_SIZE <= 768){
-                _CONTAINER.style.width = _SIZE + 'px';
-            }
+            if(_SIZE <= 768) _CONTAINER.style.width = _SIZE + 'px';
 
             let mapOption = { 
                 center: new kakao.maps.LatLng(_LAT, _LNG), level: 3
             };
 
-            // map draw
+            // 지도 그리기
             map = new kakao.maps.Map(_CONTAINER, mapOption);
 
-            // 마커가 표시될 위치입니다 
             let markerPosition  = new kakao.maps.LatLng(_LAT, _LNG); 
 
             // 마커를 생성합니다
@@ -298,10 +295,10 @@
             });
 
             // 카테고리 설정
-            placeOverlay = new kakao.maps.CustomOverlay({zIndex:1}), 
-            contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다 
-            markers = [], // 마커를 담을 배열입니다
-            currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
+            placeOverlay = new kakao.maps.CustomOverlay({zIndex:1});
+            contentNode = document.createElement('div');
+            markers = [];
+            currCategory = '';
 
             // 장소 검색 객체를 생성합니다
             ps = new kakao.maps.services.Places(map); 
@@ -407,10 +404,7 @@
             // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
             var order = document.getElementById(currCategory).getAttribute('data-order');
 
-            
-
             for ( var i=0; i<places.length; i++ ) {
-
                     // 마커를 생성하고 지도에 표시합니다
                     var marker = addMarker(new kakao.maps.LatLng(places[i].y, places[i].x), order);
 
