@@ -195,7 +195,8 @@
         const _SIZE = window.screen.width;
         let _CONTAINER = document.getElementById("map");
 
-        function drawMap() {
+        function fnDrawMap() {
+            console.debug('draw map...');
             if(location.href.indexOf("marriage0529.github.io") != -1){
                 return;
             }
@@ -235,7 +236,7 @@
         // document.ready
         $(function(){
             fnSetDate();
-            drawMap();
+            fnDrawMap();
         });
     </script>
 </body>
