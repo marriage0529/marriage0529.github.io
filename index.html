@@ -192,11 +192,31 @@
         */
         const _LAT = 37.489617;
         const _LNG = 126.7228175;
-        const _CONTAINER = document.getElementById('map');
-        const _CENTER = new kakao.maps.LatLng(_LAT, _LNG);
-        const _OPTIONS = {_CENTER, level:3};
+        const _SIZE = window.screen.width;
+        
+        let _CONTAINER = document.getElementById('map');
 
 		let map = new kakao.maps.Map(_CONTAINER, _OPTIONS);
+
+        function drawMap() {
+            if(_CONTAINER === undefined){
+                return;
+            }
+
+            // mobile
+            if(_SIZE <= 768){
+                _CONTAINER.style.width = '375px';
+            }
+            else {
+                _CONTAINER.style.width = '980px';
+            }
+
+            let mapOption = { 
+                center: new kakao.maps.LatLng(_LAT, 126.7228175), level: 3
+            };
+
+            map = new kakao.maps.Map(_CONTAINER, mapOption);
+        }
 
         function resizeMap() {
             _CONTAINER.style.width = '100%';
@@ -212,13 +232,7 @@
         // document.ready
         $(function(){
             fnSetDate();
-        });
-
-        $(window).resize(function(){
-            console.debug('window resize Trigger Call function Start...');
-            resizeMap();
-            relayout();
-            console.debug('window resize Trigger Call function End...');
+            drawMap();
         });
     </script>
 </body>
