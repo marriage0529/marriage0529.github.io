@@ -193,7 +193,8 @@
         const _LAT = 37.489617;
         const _LNG = 126.7228175;
         const _SIZE = window.screen.width;
-        let _CONTAINER = document.getElementById("map");
+        const _CONTAINER = document.getElementById("map");
+        let _TRAFFIC = false;
 
         function fnDrawMap() {
             if(location.href.indexOf("marriage0529.github.io") < 0){
@@ -228,8 +229,19 @@
 
             // click event 등록
             kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-                
+                return fnDrawTraffic();
             });
+        }
+
+        function fnDrawTraffic() {
+            if(!_TRAFFIC){
+                map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+            }
+            else {
+                map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+            }
+
+            _TRAFFIC = !_TRAFFIC;
         }
 
         // document.ready
