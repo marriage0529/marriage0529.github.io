@@ -23,6 +23,22 @@
     <style>
         body {font-family: MaruBuri-Regular;}
         #map{width:980px;height:563px;margin: 0 auto;}
+
+        /* Kakao CSS */
+        .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+        .wrap * {padding: 0;margin: 0;}
+        .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+        .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+        .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
+        .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+        .info .close:hover {cursor: pointer;}
+        .info .body {position: relative;overflow: hidden;}
+        .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
+        .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+        .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
+        .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+        .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+        .info .link {color: #5085BB;}
     </style>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -229,12 +245,24 @@
             // 마커가 지도 위에 표시되도록 설정합니다
             marker.setMap(map);
 
-            let content = "<div>";
-            content += "<ul class=\"alt\">";
-            content += "<li>2021/05/29</li>";
-            content += "<li>이 곳에서 결혼 합니다.</li>";
-            content += "</ul>";
-            content += "</div>";
+            let content = '<div class="wrap">';
+            content += '<div class="info">';
+            content += '<div class="title">';
+            content += '부평 벨라루체 웨딩홀';
+            content += '<div class="close" onclick="closeOverlay()" title="닫기"></div>';
+            content += '</div>';
+            content += '<div class="body">';
+            content += '<div class="img">';
+            content += '<img src="assets/img/spot.jpg" width="73" height="70">';
+            content += '</div>';
+            content += '<div class="desc">';
+            content += '<div class="ellipsis">인천 부평구 광장로 16 부평역사쇼핑몰 5층</div>';
+            content += '<div class="jibun ellipsis">(우) 21404 (지번) 부평동 738-21</div>';
+            content += '<div><a href="javascript:fnCopy()" class="link">복사하기</a></div>';
+            content += '</div>';
+            content += '</div>';
+            content += '</div>';   
+            content += '</div>';
 
             // 마커 위에 커스텀오버레이를 표시합니다
             // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
@@ -258,6 +286,10 @@
             kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
                 return fnDrawTraffic();
             });
+        }
+
+        function fnCopy(){
+            alert("복사되었습니다.");
         }
 
         function fnDrawTraffic() {
