@@ -259,7 +259,7 @@
             content += '<div class="desc">';
             content += '<div class="ellipsis">인천 부평구 광장로 16 부평역사쇼핑몰 5층</div>';
             content += '<div class="jibun ellipsis">(우) 21404 (지번) 부평동 738-21</div>';
-            content += '<div><a href="javascript:fnCopy()" class="link">복사하기</a></div>';
+            content += '<div><a href="https://map.kakao.com/link/to/부평 벨라루체 웨딩홀,37.489617,126.7228175" target="_blank" class="link">길찾기</a></div>';
             content += '</div>';
             content += '</div>';
             content += '</div>';   
@@ -276,16 +276,9 @@
                 overlay.setMap(map);
             });
 
-            // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
-            
-
-            // kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-            //     return fnDrawTraffic();
-            // });
-        }
-
-        function fnCopy(){
-            alert("복사되었습니다.");
+            kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+                return fnDrawTraffic();
+            });
         }
 
         function fnCloseOverlay() {
