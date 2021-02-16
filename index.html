@@ -213,6 +213,7 @@
         let _TRAFFIC = false;
         let map = null;
         let marker = null;
+        let overlay = null;
 
         function fnDrawMap() {
             if(location.href.indexOf("marriage0529.github.io") < 0){
@@ -249,7 +250,7 @@
             content += '<div class="info">';
             content += '<div class="title">';
             content += '부평 벨라루체 웨딩홀';
-            content += '<div class="close" onclick="closeOverlay()" title="닫기"></div>';
+            content += '<div class="close" onclick="fnCloseOverlay()" title="닫기"></div>';
             content += '</div>';
             content += '<div class="body">';
             content += '<div class="img">';
@@ -264,9 +265,7 @@
             content += '</div>';   
             content += '</div>';
 
-            // 마커 위에 커스텀오버레이를 표시합니다
-            // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
-            let overlay = new kakao.maps.CustomOverlay({
+            overlay = new kakao.maps.CustomOverlay({
                 content: content,
                 map: map,
                 position: marker.getPosition()       
@@ -278,18 +277,19 @@
             });
 
             // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
-            function closeOverlay() {
-                overlay.setMap(null);     
-            }
+            
 
-            // click event 등록
-            kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-                return fnDrawTraffic();
-            });
+            // kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+            //     return fnDrawTraffic();
+            // });
         }
 
         function fnCopy(){
             alert("복사되었습니다.");
+        }
+
+        function fnCloseOverlay() {
+            overlay.setMap(null);
         }
 
         function fnDrawTraffic() {
