@@ -22,6 +22,9 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc21ee3268b80cd20003ad689adc4225&libraries=services,clusterer,drawing"></script>
     <style>
         body {font-family: MaruBuri-Regular;}
+        @media all and (max-width:320px){
+            #map{width:100%;}
+        }
     </style>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -137,9 +140,9 @@
             </div>
             <div class="content">
                 <!-- 지도 영역 -->
-                <div id="map" style="width:980px;height:563px; margin: 0 auto;min-width: 375px;"></div>
+                <div id="map" style="width:980px;height:563px;margin: 0 auto;"></div>
                 <ul class="actions stacked" style="margin-top: 30px;">
-                    <li><a href="https://map.kakao.com/link/to/벨라루체,37.489617,126.7228175" target="_blank" class="button">Learn More</a></li>
+                    <li><a href="https://map.kakao.com/link/to/부평 벨라루체 웨딩홀,37.489617,126.7228175" target="_blank" class="button">Learn More</a></li>
                 </ul>
             </div>
         </section>
@@ -153,7 +156,7 @@
                     <li><a title="신부 인스타 가기" href="https://www.instagram.com/yoon_true/" target="_blank" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
                     <li><a title="신랑 이메일 보내기" href="mailto:wognsl34@gmail.com" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
                 </ul>
-                <p>&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                <p>&copy; Untitled. Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>.</p>
             </div>
         </footer>
 
@@ -199,7 +202,7 @@
 
 		let map = new kakao.maps.Map(container, options);
 
-        // document.ready...
+        // document.ready
         $(function(){
             fnSetDate();
         });
