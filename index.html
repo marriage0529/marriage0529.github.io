@@ -193,34 +193,43 @@
         const _LAT = 37.489617;
         const _LNG = 126.7228175;
         const _SIZE = window.screen.width;
-        let _CONTAINER = document.getElementById('map');
+        let _CONTAINER = document.getElementById("map");
 
         function drawMap() {
+            if(location.href.indexOf("marriage0529.github.io") != -1){
+                return;
+            }
+
             if(_CONTAINER === undefined){
                 return;
             }
 
-            // mobile
             if(_SIZE <= 768){
                 _CONTAINER.style.width = _SIZE + 'px';
             }
 
             let mapOption = { 
-                center: new kakao.maps.LatLng(_LAT, 126.7228175), level: 3
+                center: new kakao.maps.LatLng(_LAT, _LNG), level: 3
             };
 
+            // map draw
             map = new kakao.maps.Map(_CONTAINER, mapOption);
-        }
 
-        function resizeMap() {
-            _CONTAINER.style.width = '100%';
-            // _CONTAINER.style.height = '650px'; 
-            console.debug('call resizeMap');
-        }
+            // 마커가 표시될 위치입니다 
+            // let markerPosition  = new kakao.maps.LatLng(_LAT, _LNG); 
 
-        function relayout() {
-            map.relayout();
-            console.debug('call relayout');
+            // 마커를 생성합니다
+            let marker = new kakao.maps.Marker({
+                position: new kakao.maps.LatLng(_LAT, _LNG);
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+
+            // click event 등록
+            kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+                
+            });
         }
 
         // document.ready
